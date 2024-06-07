@@ -1,10 +1,158 @@
-<html>
+<html lang="en">
 <head>
-<title>Swietny Dzik</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="dzik.jpg" type="image/x-icon">
+    <title>Świetny Dzik</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: 8B7154;
+            width: 30%;
+            height: 0%;
+            font-size: 25pt;
+            text-align: center;
+            color: A0A594;
+            font-weight: bold;
+            float: left;
+            text-align: left;
+        }
+        header:hover{
+            cursor: default;
+        }
+        nav{
+            width: 100%;
+            background-color: 8B7154;
+            height: 8%;
+            color: A0A594;
+            text-align: center;
+            font-size: 25pt;
+        }
+        article{
+            height: 92%;
+            width: 100%;
+        }
+        footer{
+            clear: both;
+            background-color: 45372B;
+            width: 100%;
+            height: 5%;
+            color: DFC3A6;
+            text-align: center;
+            font-size: 25pt;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #nie:hover{
+            cursor: no-drop;
+            text-decoration: none;
+        }
+        #odzielenie{
+            cursor: default;
+        }
+    </style>
 </head>
-<body bgcolor="gray">
-<script>
-    window.location.href = "repair.html"
-</script>
+<body bgcolor="809B9A">
+    <nav>
+        <font id="odzielenie">  </font><a onclick="otworzurl()">WIECEJ DZIKÓW</a>
+        <font id="odzielenie"> | </font><a onclick="ocen()">OCEN DZIKA</a>
+        <!-- <font id="odzielenie"> | </font><a onclick="" id="nie">GRY</a> -->
+        <font id="odzielenie"> | </font><a onclick="donate()">DONATE</a>
+        <font id="odzielenie"> | </font><a href="donate.html" target="_blank">DONEJTORZY</a>
+        <font id="odzielenie"> | </font><a onclick="ciastka()" id="cookie">🍪: 0</a>
+    </nav>
+    <article>
+        <img src="dzik.jpg" height="100%" width="100%">
+    </article>
+    <!-- <footer>
+        &copy; Świetna strona z dzikiem 2024
+    </footer> -->
+
+    <script>
+        /* WAZNE ZMIENNE */
+        var ciastko = 0
+        var q = 1
+        var p = 1
+        var r = 1
+        var zgoda = 1
+        /* FUNKCJE */
+        function ocen() {
+            o = confirm("Czy potwierdzasz chęć oceny tego dzika?")
+            if (o == true){
+                g = parseInt(prompt("Na ile gwiazdek oceniasz tego dzika? (1-5)"))
+                
+                if (g > 5){
+                    alert("DZIĘKUJEMY ZE TAK WYSOKO OCENIL*S TEGO DZIKA!!")
+                    if(r == 1){
+                    alert("Tutaj masz ciastko w nagrode: 🍪")
+                    ciastkox(1)
+                    r = 0
+                    }
+                }
+                if (g < 1){
+                    alert("Czemu tak mało ;c")
+                }
+                if (g > 0 && g < 6){
+                    alert("Dziekujemy za ocene tego dzika")
+                }
+            }
+            else{
+                alert("Dzik nie został oceeniony")
+            }
+        }
+
+        function ciastka(){
+            if (zgoda == 1){
+                alert("Ciastka mozesz zdobywac w rózny sposób, od oceniania dzika aż po gry!")
+                if (q == 1){
+                alert("Masz ciastko na start :D 🍪")
+                ciastkox(1)
+                q = 0
+                }
+            }
+        }
+
+        function otworzurl(){
+            if (p ==1){
+                ciastkox(1)
+                p = 0
+            }
+            window.open("https://www.google.pl/search?sca_esv=d66eeba216212f8b&sca_upv=1&q=dzik&uds=ADvngMg56oHTv53WHmtoXL0DcsuKXfyN7Frf-mRufNaJHobY2kXAd-adXin8VvHGZvtONsRGrFw-glMd_JoJRhzEK4HVlRiGA56IIeYkjXKIi5d89WvaVU5qT6hTV-aLBGTr78zSPZnvtmB3gEx2oqX72YSiUx4HPS_Uv1pSJf1J6bjjaWoP1tycd6z7KTmA_gB7hf2QcLyC0qXEE1xACzOhKZhfB08wJ_9le8W3h-_lGmL85Na1j_94zFkuQJxVnK7ymxT1W6cY8wAAYnfb26fxCnJ6UTN9GA&udm=2&prmd=ivnbz&sa=X&ved=2ahUKEwiIqPrAi8KGAxW4ExAIHRLaBvwQtKgLegQIHRAB&biw=1488&bih=742&dpr=1.25")
+        }
+
+        function donate(){
+            alert("Obecnie jest tylko jedna opcja donate")
+            alert("W formie psc!")
+            lk = confirm("Chcesz wyświetlić poradnik jak zdonateować?")
+            if (lk == true){
+                alert("1. Kup kod psc na dowolna kwote")
+                alert("2. Wyslij kod psc na wiadomosci prywatnej na discord - rogaliqq")
+                alert("3. Czekaj na zweryfikowanie kodu, jesli bedzie działał zostaniesz umieszczon* na sekcji donejtorów")
+            }
+        }
+
+        /*FUNKCJE ZE ZMIENNYMI */
+        function ciastkox(cx){
+            ciastko = ciastko + cx
+            document.getElementById("cookie").innerHTML = "🍪: " + ciastko
+        }
+        function essteregg(eg){
+            eastereggs = eastereggs + eg
+        }
+
+        /*FUNKCJA MECHANIKI*/
+        function pokaz(stronaq){
+            
+        }
+    </script>
 </body>
 </html>
